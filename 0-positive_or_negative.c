@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
   *main - generates random numbers and checks if its positive
-  *@n : this is the variable that holds the vallue of theb= random function
+  *@n :  holds the value of the random function
   *Return : 0 is always sucess
 */
 
