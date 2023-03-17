@@ -1,17 +1,13 @@
 #include <stdio.h>
 /**
- * this is a function that prints text
- */
-/** 
- * i keep typing
+ * main - A program that prints text
+ * Return 0 (success)
  */
 int main(void)
 {
 	char str[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(str);
-/**
- * this returns a a zero integer
- */
+
 	return (0);
 }
