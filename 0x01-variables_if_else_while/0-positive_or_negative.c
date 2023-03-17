@@ -4,7 +4,7 @@
 /**
   *main - generates random numbers and checks if its positive
   *@n : this is the variable that holds the vallue of theb= random function
-  *Return : 0 is always sucess
+  *Return : 0 is always(Sucess)
 */
 
 int main(void)
