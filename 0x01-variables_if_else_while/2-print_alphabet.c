@@ -1,5 +1,8 @@
 #include <stdio.h>
 /**
+ *main -loops through the alphabet
+ *@i - varible  that holds the alphabets
+ *Return: 0 always (Success)
  */
 int main(void)
 {
