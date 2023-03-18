@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *main - prints hex numbers in decimal usin putchar
- *Result: 0 is always (Success)
+ *Return: 0 is always (Success)
  */
 int main(void)
 {
