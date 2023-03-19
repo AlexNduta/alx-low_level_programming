@@ -1,5 +1,7 @@
 #include <stdio.h>
 /**
+ *main- prints a combo of 3 possible numbers without duplicate values
+ *Return: 0 is always (Success)
   */
 int main(void)
 {
