@@ -4,7 +4,7 @@
  *@c: variable that is used to make checks
  *Return: 1 if its alphabet, 0 otherwise
  */
-in _isalpha(int c)
+int _isalpha(int c)
 {
 	if (isalpha(c))
 		return (1);
