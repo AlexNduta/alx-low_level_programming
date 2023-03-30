@@ -4,7 +4,7 @@
  *@s1: first pointer array
  *@s2: second  pointer array
  *
- *Return: the difference between different characters
+ *Return: int
  */
 int _strcmp(char *s1, char *s2)
 {
