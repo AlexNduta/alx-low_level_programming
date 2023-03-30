@@ -1,9 +1,10 @@
 #include "main.h"
 /**
+ * _strcmp - compares two strings and subtracts their ASCII difference
+ *@s1: first pointer array
+ *@s2: second  pointer array
  *
- *
- *
- *
+ *Return: the difference between different characters
  */
 int _strcmp(char *s1, char *s2)
 {
