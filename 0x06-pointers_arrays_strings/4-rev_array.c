@@ -1,14 +1,13 @@
 #include "main.h"
 /**
- *reverse_arra - reverse elements in an array
- *@a: pointer to  the array
+ *reverse_array - reverse array
+ *@a: array
  *@n: size of the array
- *
  *Return:void
  */
 void reverse_array(int *a, int n)
 {
-	int temp[n];
+	int *temp = malloc(n * sizeof(int));
 	int i;
 
 		for (i = n - 1; i  >= 0; i--)
