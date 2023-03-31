@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  *string_toupper - convert to uppecase
- *@str: pointer variable to array
+ *@*: pointer variable to array
  *Return: char
  */
 char *string_toupper(char *str)
