@@ -9,7 +9,13 @@ unsigned int _strpn(char *s, char *accept)
 {
 	unsigned int len;
 
-	len = strspn(s, accept);
-
+	if (s == NULL || accept == NULL)
+	{
+		return (0);
+	}
+	while (*s && strchr(accept, *s++))
+	{
+		len++;
+	}
 	return (len);
 }
