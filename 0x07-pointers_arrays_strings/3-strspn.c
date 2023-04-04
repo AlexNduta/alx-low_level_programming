@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  *_strpn -gets the length of a prefix sub string
  *@s: pointer to charcter
@@ -13,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		return (0);
 	}
-	while (*s && _strchr(accept, *s++))
+	while (*s && strchr(accept, *s++))
 	{
 		len++;
 	}
