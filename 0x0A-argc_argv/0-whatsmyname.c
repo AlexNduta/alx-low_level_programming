@@ -6,7 +6,7 @@
  *
 *Return: 0 is always sucess
  */
-int main(int argc,char* argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 	(void) argc;
