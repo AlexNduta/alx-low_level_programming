@@ -8,7 +8,16 @@
  */
 int main(int argc, char *argv[])
 {
-	printf("%d\n", argc);
+	int count;
+
+	if (argc > 1)
+	{
+		count = argc - 1;
+	} else
+	{
+		count = 0;
+	}
 	(void)argv;
+		printf("%d\n", count);
 	return (0);
 }
