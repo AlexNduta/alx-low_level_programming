@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
 
 	if (argc < 3)
 	{
-		printf("Error");
+		printf("Error\n");
 		return (1);
 	}
 	for (i = 1; i <= 2; i++)
 	{
 		product = product * atoi(argv[i]);
 	}
-	printf("%d", product);
+	printf("%d\n", product);
 	return (0);
 }
