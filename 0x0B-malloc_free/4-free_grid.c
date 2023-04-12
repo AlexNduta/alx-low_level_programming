@@ -2,7 +2,7 @@
 /**
  *free_grid - free previously allocated mem'
  *@grid: pointer to a 2D array
- *@heigt: the number of rows
+ *@height: the number of rows
  *
  *Return: Nutting
  */
