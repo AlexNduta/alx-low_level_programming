@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *alloc_grind - allocates memory to a 2d array
+ *alloc_grid - allocates memory to a 2d array
  *@width: rows
  *@height: columns
  *
