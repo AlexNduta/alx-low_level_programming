@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *malloc_checker - check if  memory has been allocated
+ *malloc_checked - check if  memory has been allocated
  *@b: number of integers to be passed
  *
  *Return: pointer to allocated memory
