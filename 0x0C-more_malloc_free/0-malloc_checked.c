@@ -7,7 +7,7 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	int *checker = malloc(sizeof(*checker) * b);
+	int *checker = malloc(b);
 
 	if (checker == 0)
 		exit(98);
