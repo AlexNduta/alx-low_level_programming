@@ -3,7 +3,7 @@
  *init_dog - function to initialise our dog structure
  *@d: pointer to the dog structure
  *@name: pointer to the name of the dog
- *@ge: age of the dog
+ *@age: age of the dog
  *@owner: pointer to the cutodian of the dog
  *
  *Return: void
