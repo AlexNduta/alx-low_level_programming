@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 /**
  *print_numbers - prints numbers seperated by comas
- *@sperator: character following printed number
+ *@seperator: character following printed number
  *@n: mandatory variable
  *Return : void
  */
