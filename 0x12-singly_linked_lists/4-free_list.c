@@ -1,10 +1,10 @@
-#include "list.h"
+#include "lists.h"
 /**
  *free_list - Relaeses the lists alocated memory
  *@head: points to the head of our list
  *
  */
-void free_list(list *head)
+void free_list(list_t *head)
 {
 	if (head)
 	{
