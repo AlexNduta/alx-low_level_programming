@@ -3,7 +3,7 @@
  *list_t - Adds a new node at the end our list
  *@head:the head of our list
  *@str: item to add
- *Return:
+ *Return:pointer to out new node
  *
  */
 list_t *add_node_end(list_t **head, const char *str)
