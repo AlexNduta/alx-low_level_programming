@@ -1,20 +1,30 @@
-	extern printf
+	.file	"here.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"Hello, Holberton"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Debian 11.3.0-12) 11.3.0"
+	.section	.note.GNU-stack,"",@progbits
 
-		section .data ;this is the data section
-msg:		db "Hello Holberton", 0 ; initialised variable 1
-fmt:		db "%s", 10, 0 ;The printf format in a new line(10)
-
-		section .text;our code section
-		global main ;standard gcc entry point
-main:  ;label used to mark the entry point
-		push rbp ;setting up a stack frame
-
-		mov rdi,fmt
-		mov rsi,msg
-		mov rax,0   ;can either be xor rax , rax
-		call printf ;call the printf function in c
-
-		pop rbp ;restore stack
-
-		mov rax,0
-		ret  ;return keyword
