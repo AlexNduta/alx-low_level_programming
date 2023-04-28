@@ -1,7 +1,7 @@
 	extern printf
 
 		section .data ;this is the data section
-msg:		db "Hello Holberton", 0 ; initialised variable 1
+msg:		db "Hello, Holberton", 0 ; initialised variable 1
 fmt:		db "%s", 10, 0 ;The printf format in a new line(10)
 
 		section .text;our code section
