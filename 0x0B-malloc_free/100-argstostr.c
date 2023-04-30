@@ -30,12 +30,12 @@ char *argstostr(int ac, char **av)
 	if (string == NULL)
 		return (NULL);
 
-	for (i = 0, j = 0; i < ac && j < lenghth; i++)
+	for (i = 0, j = 0; i < ac && j < length; i++)
 	{
 		stream = av[i];
 
 	k = 0;
-	while (s[k] != '\0')
+	while (stream[k] != '\0')
 	{
 		string[j] = stream[k];
 		k++;
