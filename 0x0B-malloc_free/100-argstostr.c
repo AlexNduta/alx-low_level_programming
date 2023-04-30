@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 		stream = av[i];
 		j = 0;
 
-		while (s[j] != '\0')
+		while (stream[j] != '\0')
 		{
 			j++;
 			length++;
@@ -37,11 +37,11 @@ char *argstostr(int ac, char **av)
 	k = 0;
 	while (s[k] != '\0')
 	{
-		string[j] = stream[k]
+		string[j] = stream[k];
 		k++;
 		j++;
 	}
-	string[j++] = '\n'
+	string[j++] = '\n';
 	}
 	string[j] = '\0';
 	return (string);
