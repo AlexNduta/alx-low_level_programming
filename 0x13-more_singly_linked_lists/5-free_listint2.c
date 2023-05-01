@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  *free_listint2 - frees the liat and set head to NULL
- *@**head: pointer to the first element of our list
+ *@head: pointer to the first element of our list
  *
  *Return: Nothing
  */
