@@ -10,28 +10,21 @@ listint_t *reverse_listint(listint_t **head)
 	/*initialise the variables */
 	listint_t *before_node = NULL;
 	listint_t *after_node = NULL;
-	listint_t *current_node = *head;
 
 	if (head == NULL && *head == NULL)
 		return (NULL);
-/*if the list has one node, then its already reversed */
 	if ((*head)->next == NULL)
 		return (*head);
 
-	/* Reverse our list */
-	while (current_node != NULL)
+	while (*head != NULL)
 	{
-	/* save the next_node */
-		after_node = current_node->next;
+		after_node = (*head)->next;
 
-		/*reverse the link */
-		current_node->next = before_node;
+		(*head)->next = before_node;
 
-		/* Update the before and afternodes */
-		before_node = current_node;
-		current_node = after_node;
+		before_node = *head;
+		*head = after_node;
 	}
-	/*update the head to point to the first node */
 	*head = before_node;
 	return (*head);
 }
