@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  *reverse_listint - reverse our list
- *@**head: pointer to the first node
+ *@head: pointer to the first node
  *
  *Return: pointer to the first node of the reversed list
  */
@@ -19,9 +19,7 @@ listint_t *reverse_listint(listint_t **head)
 	while (*head != NULL)
 	{
 		after_node = (*head)->next;
-
 		(*head)->next = before_node;
-
 		before_node = *head;
 		*head = after_node;
 	}
