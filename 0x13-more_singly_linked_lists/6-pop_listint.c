@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  *pop_listint - deletes the first node in our list
- *@head:pointer to the first
+ *@head: pointer to the first
  *
  *Return: empty
  */
