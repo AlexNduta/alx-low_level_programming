@@ -12,9 +12,9 @@ int sum_listint(listint_t *head)
 	/*Traverse the list and add each node to the sum */
 	while (head != NULL)
 	{
-		summation = sumation + head->n;
+		summation = summation + head->n;
 		head = head->next;
 	}
 
-	return (sum);
+	return (summation);
 }
