@@ -1,12 +1,12 @@
 #include "main.h"
 /**
  *_powe - calculates base raised to pow
- *@baase: base of exponent number
+ *@base: base of exponent number
  *@pow: power of exponent number
  *
  *Return: The value of the base raised to the power of pow
  */
-unsigned long int _power(unsigned int base, unsigned int pow)
+unsigned long int _power_of(unsigned int base, unsigned int pow)
 {
 	unsigned long int num = 1;
 	unsigned int i;
@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 	unsigned long int dev, result;
 	char flag = 0;
 
-	dev = _power(2, sizeof(unsigned long int) * 8 - 1);
+	dev = _power_of(2, sizeof(unsigned long int) * 8 - 1);
 
 	while (dev != 0)
 	{
