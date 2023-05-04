@@ -5,7 +5,7 @@
  *
  *Return: 0 - big edian or 1 if little endian
  */
-int get_edianness(void)
+int get_endianness(void)
 {
 	int i = 1;
 	char *ptr = (char *)&i;
