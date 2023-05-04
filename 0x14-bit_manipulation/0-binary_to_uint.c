@@ -7,21 +7,22 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	size_t output = 0;
-	int i = 0;
-	/* chek if input string is null */
-	if (b == NULL)
-		return (0);
- /*initialise a variable to carry the result*/
+	int i;
+	unsigned int output;
 
-	while (b[i] != '\0')
+	output = 0;
+	if (!b)
+		return (0);
+	for (i = 0; b[i] != '\0'; i++)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		output = output * 2 +(b[i] - '0');
-	i++;
+	}
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		output <<= 1;
+		if (b[i] == '1')
+			output += 1;
 	}
 	return (output);
 }
-
-
