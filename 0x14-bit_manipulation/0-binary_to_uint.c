@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *binary_to_unint - convert an input astring to int
+ *binary_to_uint - convert an input astring to int
  *@b: points to a sttring 0 & 1
  *
  *Return: converted number
