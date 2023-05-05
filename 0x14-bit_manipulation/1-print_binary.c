@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_powe - calculates base raised to pow
+ *_power_of - calculates base raised to pow
  *@base: base of exponent number
  *@pow: power of exponent number
  *
