@@ -3,6 +3,7 @@
  *append_text_to_file -appends text to EOF
  *@filename: name of our file
  *@text_content: String to add at EOF
+ *
  *Return: 1 || -1 , sucess || failure, respectively
  */
 int append_text_to_file(const char *filename, char *text_content)
