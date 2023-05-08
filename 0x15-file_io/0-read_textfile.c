@@ -26,6 +26,7 @@ char *buff;
 		return (0);
 	}
 
+	/*read */
 	nread = read(fd, buff, letters);
 	if (nread == -1)
 	{
@@ -34,6 +35,7 @@ char *buff;
 		return (0);
 	}
 
+	/* write to the file */
 	nwrite = write(STDOUT_FILENO, buff, nread);
 	if (nwrite == -1 || nwrite != nread)
 	{
