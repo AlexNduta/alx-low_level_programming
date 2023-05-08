@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- *read_textfile - crestes a file that is read and written to
+ *create_file - creates a file that is read and written to
+ *@text_conten: complete string to write to the file
  *@filename: name of the file to be manipulated
  *@Return: 1 || -1 success || failure, reapectively
  */
