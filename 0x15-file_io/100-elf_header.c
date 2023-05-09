@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 void elf_checker(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
+void magic_printer(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
@@ -22,7 +22,7 @@ void close_elf(int elf);
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
  * Description: If file is not an ELF file - exit code 98.
- */
+ */erer
 void elf_checker(unsigned char *e_ident)
 {
 	int index;
@@ -41,12 +41,12 @@ void elf_checker(unsigned char *e_ident)
 }
 
 /**
- * print_magic - Prints the magic numbers of an ELF header.
+ * magic_printer - Prints the magic numbers of an ELF header.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
  * Description: Magic numbers are separated by spaces.
  */
-void print_magic(unsigned char *e_ident)
+void magic_printer(unsigned char *e_ident)
 {
 	int index;
 
@@ -299,7 +299,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	elf_checker(header->e_ident);
 	printf("ELF Header:\n");
-	print_magic(header->e_ident);
+	magic_printer(header->e_ident);
 	print_class(header->e_ident);
 	print_data(header->e_ident);
 	print_version(header->e_ident);
