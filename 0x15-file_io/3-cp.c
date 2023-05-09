@@ -5,7 +5,7 @@
 /**
  *main - Copiex context of file x to y
  *@argc: Number of arguments passed.
- *@argv:Array of pointers to the arguments
+ *@argv: Array of pointers to the arguments
  *
  *Return: 0 on success
  */
