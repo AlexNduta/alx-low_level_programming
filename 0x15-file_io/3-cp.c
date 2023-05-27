@@ -1,79 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include "main.h"
+
 /**
- *main - Copiex context of file x to y
- *@argc: Number of arguments passed.
- *@argv: Array of pointers to the arguments
+ * _strlen - finds the length of a string
+ * @str: pointer to the string
  *
- *Return: 0 on success
+ * Return: length of the string
  */
-int main(int argc, char *argv[])
+size_t _strlen(char *str)
 {
-	int _from, _to;
-	ssize_t lengthr, lengthw;
-	char buffer[1024];
-mode_t file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	size_t i;
 
-	/*check number of argumnets */
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to \n");
-		exit(97);
-	}
+	for (i = 0; str[i]; i++)
+		;
+	return (i);
+}
 
-	/* open the file_from*/
-	_from = open(argv[1], O_RDONLY);
-	if (_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+/**
+ * append_text_to_file - appends a text at the end of a file.
+ * @filename: name of the file
+ * @text_content: NULL terminated string to add at the end of the file
+ *
+ * Return: 1 on success and -1 on failure
+ */
+int append_text_to_file(const char *filename, char *text_content)
+{
+	int fd;
+	ssize_t len;
 
-	/*open the file_to */
-	_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_perm);
-	if (_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(_from);
-		exit(99);
-	}
-
-	/* copy file contents */
-	while ((lengthr = read(_from, buffer, 1024)) > 0)
-	{
-	lengthw = write(_to, buffer, lengthr);
-		if (lengthw != lengthr)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(_from);
-			close(_to);
-			exit(99);
-		}
-	}
-
-	/*Check for errors durring copying process */
-	if (lengthr == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(_from);
-		close(_to);
-		exit(98);
-	}
-
-	/*Close  the files */
-	if (close(_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _from);
-		exit(100);
-	}
-
-	if (close(_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _to);
-		exit(100);
-	}
-
-	return (0);
+	if (filename == NULL)
+		return (-1);
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
+		return (-1);
+	if (text_content != NULL)
+		len = write(fd, text_content, _strlen(text_content));
+	close(fd);
+	if (len == -1)
+		return (-1);
+	return (1);
 }

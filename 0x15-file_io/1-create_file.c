@@ -1,30 +1,34 @@
 #include "main.h"
 /**
- *create_file - creates a file that is read and written to
- *@text_content: complete string to write to the file
- *@filename: name of the file to be manipulated
+ *read_textfile - reads a file &  and write it to stdout
+ *@filename: complete string to write to the file
+ *@letters: number of letters the function should read and write
  *@Return: 1 || -1 success || failure, reapectively
  */
-int create_file(const char *filename, char *text_content)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, nwrite, length = 0;
+	ssize_t o, r, w;
+	char *buffer;
 
 	if (filename == NULL)
-		return (-1);
+		return (0);
 
-	if (text_content != NULL)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
-	/*calculate then length of the  text content */
-		while (text_content[length] != '\0')
-			length++;
+		free(buffer);
+		return (0);
 	}
 
-	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
-	nwrite = write(fd, text_content, length);
+	free(buffer);
+	close(o);
 
-	if (fd == -1 || nwrite == -1)
-		return (-1);
-	close(fd);
-	return (1);
+	return (w);
 }
-
