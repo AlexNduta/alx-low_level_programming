@@ -2,8 +2,8 @@
 
 /**
 *print_dlistint - prints all elements in out linked list
-*dlidtint_t: passed list
-*Return: a list to print
+*@h: passed list
+*Return: number of nodes to print
 */
 
 size_t print_dlistint(const dlistint_t *h)
