@@ -1,36 +1,33 @@
-#include "list.h"
+#include "lists.h"
 
 /**
-*dlistint_t - adds an element to the end of our list
-*@head: pointer to the head of our list
-*@n: value to add at our list
-*Return: pointer to our new node
+* add_dnodeint_end - adds a node to the end of a linked list
+* @head: double pointer to the beginning of the linked list
+* @n: value to add to new node
+*
+* Return: pointer to the new node, or NULL on failure
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
+dlistint_t *new, *tmp;
+
 if (head == NULL)
 return (NULL);
-dlistint_t current;
-dlistint_t newItem = GetNewNode(n);
-/*if memory allocation is NULL*/
-if newItem == NULL
+new = malloc(sizeof(dlistint_t));
+if (new == NULL)
 return (NULL);
-/*when the list is empty */
+new->n = n;
+new->next = NULL;
 if (*head == NULL)
 {
-newItem->prev = NULL;
-*head = new'
-return (newitem);
+new->prev = NULL;
+*head = new;
+return (new);
 }
-/* as long as we have not reached the last item, keep moving forward */
-current = *head;
-while(current->next != NULL)
-{
-current = current-next;
-}
-/*when you get to the last item, make the current node point to the new item*/
-current->next = newItem;
-newItem->prev =current;
-
-return (newItem);
+tmp = *head;
+while (tmp->next != NULL)
+tmp = tmp->next;
+tmp->next = new;
+new->prev = tmp;
+return (new);
 }
