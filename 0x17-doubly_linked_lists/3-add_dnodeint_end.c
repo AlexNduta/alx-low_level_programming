@@ -8,6 +8,8 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
+    if (head == NULL)
+        return (NULL);
     dlistint_t current = *head;
     dlistint_t newItem = GetNewNode(n);
     /*if memory allocation is NULL*/
