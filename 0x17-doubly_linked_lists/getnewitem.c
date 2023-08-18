@@ -8,7 +8,8 @@
 dlistint_t *GetNewNode(int x)
 {
 dlistint_t *newNode = malloc(sizeof(dlistint_t));
-
+if (newNode == NULL)
+return (NULL);
 newNode->n = x;
 newNode->prev = NULL;
 newNode->next = NULL;
