@@ -10,18 +10,20 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
     if (head == NULL)
         return (NULL);
-    dlistint_t current = *head;
+    dlistint_t current;
     dlistint_t newItem = GetNewNode(n);
     /*if memory allocation is NULL*/
     if newItem == NULL
         return (NULL);
 /*when the list is empty */
-    if (head == NULL)
+    if (*head == NULL)
     {
-        head = newItem;
-        return;
+        newItem->prev = NULL;
+        *head = new'
+        return (newitem);
     }
     /* as long as we have not reached the last item, keep moving forward */
+   current = *head;
     while(current->next != NULL)
     {
         current = current-next;
