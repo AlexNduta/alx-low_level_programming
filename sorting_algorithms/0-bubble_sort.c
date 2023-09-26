@@ -8,31 +8,28 @@
 */
 void bubble_sort(int *array, size_t size)
 {
-/*O(1)*/
-size_t i, j, temp, swapValue;
-/*O(1) */
-if (array == NULL || size < 2)
-return;
-/*O(n) */
-for (i = 0; i < size - 1; i++)
-{
-swapValue = 0;
-/*O(n^2)*/
-for (j = 0; j < size - i - 1; j++)
-{
-/*O(1)*/
-if (array[j] > array[j + 1])
-{
-temp = array[j];
-array[j] = array[j + 1];
-array[j + 1] = temp;
+	size_t i, newsize = size;
+	int tmp, swap;
 
-print_array(array, size);
-swapValue = 1;
-}
-}
-if (swapValue == 0)
-break;
-}
-}
+	if (array == NULL || size < 2)
+		return;
 
+	while (newsize)
+	{
+		swap = 0;
+		for (i = 0; i < newsize - 1; i++)
+		{
+			if (array[i] > array[i + 1])
+			{
+				tmp = array[i + 1];
+				array[i + 1] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+				swap = 1;
+			}
+		}
+		newsize--;
+		if (!swap)
+			break;
+	}
+}
