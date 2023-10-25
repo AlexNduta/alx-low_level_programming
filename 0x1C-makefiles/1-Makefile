@@ -1,0 +1,7 @@
+CC= gcc
+SRC= main.c school.c
+all: m.h $(SRC)
+	$(CC) m.h $(SRC) -o school
+
+clean:
+	rm *.o
