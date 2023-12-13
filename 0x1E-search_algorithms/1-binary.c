@@ -21,11 +21,11 @@ printf("searching in array: %d\n", *array);
 }
 
 mid_num = (first_num + last_num) / 2;
-if (mid_num < value)
+if (array[mid_num] < value)
 {
 first_num = mid_num + 1;
 }
-else if (mid_num > value)
+else if (array[mid_num] > value)
 {
 last_num = mid_num - 1;
 }
