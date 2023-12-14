@@ -14,7 +14,7 @@ int last_num = size - 1;
 int mid_num = 0;
 
 if (!array)
-    return (-1);
+return (-1);
 
 while (first_num <= last_num)
 {
